@@ -1,2 +1,3 @@
 #!/bin/bash
 ls -A | wc -l
+find -type d -path .[/]* | wc -l
