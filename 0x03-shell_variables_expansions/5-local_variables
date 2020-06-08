@@ -1,1 +1,3 @@
 #!/bin/bash
+compgen -v
+set
