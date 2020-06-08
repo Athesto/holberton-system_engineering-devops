@@ -1,1 +1,2 @@
 #!/bin/bash
+tac Acrostic | cut -c 1
