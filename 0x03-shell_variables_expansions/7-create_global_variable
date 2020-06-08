@@ -1,1 +1,2 @@
-export BETTY=Holberton
+#!/bin/bash
+BETTY=Holberton
