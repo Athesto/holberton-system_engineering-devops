@@ -2,7 +2,7 @@
 # for loop I don't have Idea of how to unset $i
 
 i=0
-while [[ $i -lt 9 ]]; do
+while [[ $i -le 9 ]]; do
 	echo "Holberton School"
 	((i++))
 done
