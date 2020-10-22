@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# for loop I don't have Idea of how to unset $i
+for i in {1..10}; do
+	echo "Holberton School" || ${i}
+done
