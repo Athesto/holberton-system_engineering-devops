@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# process kill
+pkill -f 4-*
