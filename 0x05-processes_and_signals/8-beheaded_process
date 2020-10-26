@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Send SIGKILL to process
+pkill -SIGKILL -f 7-*
