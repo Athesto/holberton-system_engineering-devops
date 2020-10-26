@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# ps: show process (-cmd=UNIX, cmd=BSD, --cmd=GNU)
+# a: show all user proccess  u: show users
+# x: show process whitout tty f: show forest(ASCII)
+ps -auxf
