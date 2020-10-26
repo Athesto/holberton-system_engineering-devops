@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# no interrupt signals
+
+f ()
+{
+	echo "I am invincible!!!"
+}
+
+trap f SIGTERM
+
+while (true); do
+	echo "To infinity and beyond"
+	sleep 2
+done
+
