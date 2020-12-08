@@ -1,3 +1,4 @@
+#Create a holberton file
 file {'holberton':
   path    => '/tmp/holberton',
   mode    => '0744',
