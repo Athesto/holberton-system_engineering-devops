@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#copy file to server
+
+MSG_ERR1="Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+
+[[ "$#" != 4 ]] && >&2 echo "$MSG_ERR1" && exit
+PATH_TO_FILE="${1}"
+FILENAME="$(basename "${PATH_TO_FILE}")"
+IP="${2}"
+USERNAME="${3}"
+PATH_TO_SSH_KEY="${4}"
+
+scp -i "${PATH_TO_SSH_KEY}" "${PATH_TO_FILE}" "${USERNAME}@${IP}:~/${FILENAME}"
