@@ -7,6 +7,6 @@
   IdentityFile ~/.ssh/holberton
   "
 
-    file{'/home/vagrant/.ssh/ssh_config':
+    file{'/home/vagrant/.ssh/config':
         content => $str,
 }
