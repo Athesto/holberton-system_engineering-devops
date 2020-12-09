@@ -4,7 +4,7 @@
   User ubuntu
   Port 22
   PasswordAuthentication no
-  IdentityFile /home/vagrant/.ssh/holberton
+  IdentityFile ~/.ssh/holberton
   "
 
     file{'/home/vagrant/.ssh/ssh_config':
