@@ -6,9 +6,7 @@
   PasswordAuthentication no
   IdentityFile /home/vagrant/.ssh/holberton
   "
-    $mypath = '/home/vagrant/.ssh/config'
 
-    file{'2-ssh_config':
-        path    => $mypath,
+    file{'/home/vagrant/.ssh/2-ssh_config':
         content => $str,
 }
