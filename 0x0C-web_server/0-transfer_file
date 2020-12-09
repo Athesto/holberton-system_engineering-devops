@@ -9,5 +9,6 @@ FILENAME="$(basename "${PATH_TO_FILE}")"
 IP="${2}"
 USERNAME="${3}"
 PATH_TO_SSH_KEY="${4}"
+SSH_OPTIONS="StrictHostKeyChecking no"
 
-scp -i "${PATH_TO_SSH_KEY}" "${PATH_TO_FILE}" "${USERNAME}@${IP}:~/${FILENAME}"
+scp -i "${PATH_TO_SSH_KEY}" -o "${SSH_OPTIONS}" "${PATH_TO_FILE}" "${USERNAME}@${IP}:~/${FILENAME}"
