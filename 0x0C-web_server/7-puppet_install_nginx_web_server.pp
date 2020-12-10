@@ -1,0 +1,5 @@
+#puppet
+
+file{'server':
+
+}
