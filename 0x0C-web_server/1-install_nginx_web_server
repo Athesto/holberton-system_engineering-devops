@@ -7,5 +7,5 @@ sudo apt install ufw -y
 sudo ufw allow 'Nginx HTTP'
 sudo ufw allow 'OpenSSH'
 sudo ufw --force enable
-echo "Holberton School" | sudo tee /var/www/html/index.html > /dev/null
 sudo /etc/init.d/nginx start
+echo "Holberton School" | sudo tee /var/www/html/index.html > /dev/null
