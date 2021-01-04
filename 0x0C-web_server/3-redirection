@@ -3,7 +3,7 @@
 sudo apt update --fix-missing
 sudo apt install nginx -y
 #sudo /etc/init.d/nginx start
-message='rewrite ^\/redirect_me\/$ https:\/\/youtube.com permanent;'
+message='rewrite ^\/redirect_me https:\/\/youtube.com permanent;'
 sed -i "s/^server {$/server {\n\t""${message}""/" /etc/nginx/sites-enabled/default
 sudo service nginx start
 echo "Holberton School" | sudo tee /var/www/html/index.html > /dev/null
