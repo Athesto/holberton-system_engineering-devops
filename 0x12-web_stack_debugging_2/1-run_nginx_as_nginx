@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#run nginx as another user
+set -x
+sed -i.bak '2s/^/user nginx;\n"/' /etc/nginx/nginx.conf
+nginx -t
+exit
+
+
+
+sudo -u nginx service nginx start
