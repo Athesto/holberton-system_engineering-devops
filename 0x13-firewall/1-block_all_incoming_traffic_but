@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#install
+
+sudo apt update --fix-missing
+sudo apt install ufw -y
+sudo ufw allow 'Nginx HTTP'
+sudo ufw allow 'OpenSSH'
+sudo ufw allow "Nginx HTTPS"
+sudo ufw --force enable
+#sudo /etc/init.d/nginx start
+sudo service nginx start
