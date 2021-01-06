@@ -3,5 +3,5 @@
 pkill apache2
 sed -i.bak '2s/^/user nginx;\n/' /etc/nginx/nginx.conf
 sed -i 's/80 default/8080 default/' /etc/nginx/sites-enabled/default
-ls /etc/nginx/nginx.conf | tee >(xargs chmod u+r) | sudo xargs chown nginx
+find /etc/nginx/nginx.conf | tee >(xargs chmod u+r) | sudo xargs chown nginx
 sudo -u nginx service nginx start
