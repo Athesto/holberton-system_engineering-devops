@@ -1,1 +1,3 @@
 #!/bin/bash
+#the biggest fan wget http://indeedeng.github.io/imhotep/files/nasa_19950801.tsv
+cut -f1 | sort | uniq -c | sort -nr | rev | cut -d" " -f1 | rev | head -11
