@@ -9,8 +9,10 @@ if __name__ == "__main__":
     from sys import argv
 
     id = argv[1]
-    api_name = "https://jsonplaceholder.typicode.com/users/{}".format(id)
-    api_todo = "https://jsonplaceholder.typicode.com/users/{}/todos".format(id)
+    api_users = "https://jsonplaceholder.typicode.com/users/{}"
+    api_todos = "https://jsonplaceholder.typicode.com/users/{}/todos"
+    msg_title = "Employee {name} is done with tasks({done}/{total}):"
+    msg_body = "\t {}"
 
     data = {
         "name": "",
@@ -18,16 +20,13 @@ if __name__ == "__main__":
         "total": 0,
         "tasks": []
     }
-    response = get(api_name)
-    data["name"] = response.json().get("name")
+    data["name"] = get(api_users.format(id)).json().get("name")
 
-    responses = get(api_todo)
-    for r in responses.json():
+    for r in get(api_todos.format(id)).json():
         data["total"] += 1
         if r.get("completed"):
             data["done"] += 1
             data["tasks"].append(r.get("title"))
-    msg = "Employee {name} is done with tasks({done}/{total}):"
-    print(msg.format(**data))
+    print(msg_title.format(**data))
     for task in data["tasks"]:
-        print("\t {}".format(task))
+        print(msg_body.format(task))
