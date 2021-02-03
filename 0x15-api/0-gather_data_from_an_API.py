@@ -48,8 +48,8 @@ def requests_method(url, data):
 
 def urllib_method(url, data):
     '''this option use urllib'''
-    from urllib import request
     from json import loads
+    from urllib import request
 
     with request.urlopen(url.format(**data)) as r:
         info = loads(r.read().decode())
