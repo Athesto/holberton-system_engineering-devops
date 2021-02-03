@@ -18,8 +18,6 @@ if __name__ == '__main__':
         user_data[element.get('id')] = tmp
         json_obj[element.get('id')] = []
 
-    print(dumps(user_data, indent=2))
-
     info = get(api_todos).json()
     for element in info:
         my_id = element.get('userId')
@@ -29,6 +27,6 @@ if __name__ == '__main__':
                 'completed': element.get('completed'),
                 'task': element.get('title')
             })
-    print(dumps(json_obj, indent=2))
+
     with open('todo_all_employees.json', 'w') as f:
         print(dumps(json_obj), file=f)
