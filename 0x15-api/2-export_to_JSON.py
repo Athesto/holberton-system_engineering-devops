@@ -23,7 +23,7 @@ if __name__ == '__main__':
             {
                 'username': data.get('username'),
                 'completed': element.get('completed'),
-                'title': element.get('title')
+                'task': element.get('title')
             })
     with open('{id}.json'.format(**data), 'w') as f:
         print(dumps(json_obj), file=f)
