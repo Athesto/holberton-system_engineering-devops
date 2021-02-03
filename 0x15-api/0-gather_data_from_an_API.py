@@ -3,6 +3,10 @@
 using this REST API, for a given employee ID,
 returns information about his/her TODO list progress
 '''
+from json import loads
+from requests import get
+from sys import argv
+from urllib import request
 
 
 def main():
@@ -13,7 +17,6 @@ def main():
 
 def getinfo(option):
     '''get info'''
-    from sys import argv
     methods = {'urllib': urllib_method, 'requests': requests_method}
     api_users = "https://jsonplaceholder.typicode.com/users/{id}"
     api_todos = "https://jsonplaceholder.typicode.com/users/{id}/todos"
@@ -41,15 +44,12 @@ def getinfo(option):
 
 def requests_method(url, data):
     '''this options works with requests module'''
-    from requests import get
 
     return get(url.format(**data)).json()
 
 
 def urllib_method(url, data):
     '''this option use urllib'''
-    from json import loads
-    from urllib import request
 
     with request.urlopen(url.format(**data)) as r:
         info = loads(r.read().decode())
