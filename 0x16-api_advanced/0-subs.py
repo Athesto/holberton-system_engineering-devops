@@ -11,7 +11,7 @@ from requests import get
 def number_of_subscribers(subreddit):
     '''check number of subscribers'''
     url = "https://reddit.com/r/{}/about.json".format(subreddit)
-    headers = {'user-agent': 'my-app/0.0.1'}
+    headers = {'User-Agent': 'my-app/0.0.1'}
     response = get(url, headers=headers)
     info = response.json().get('data').get('subscribers')
     if info:
