@@ -18,7 +18,6 @@ def count_words(subreddit, word_list, hot_list=[], page=None):
     if response.status_code == 200:
         for item in response.json().get('data').get('children'):
             title = item.get('data').get('title')
-            print(title)
             hot_list.append(title)
 
         after = response.json().get('data').get('after')
