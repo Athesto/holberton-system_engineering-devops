@@ -46,7 +46,8 @@ def count_words(subreddit, word_list, hot_list=[], page=None):
             ans = list(zip(uniq_list, quantity))
             ans_ordened = sorted(ans, key=lambda x: x[1], reverse=True)
             for name, quantity in ans_ordened:
-                print("{}: {}".format(name, quantity))
+                if quantity:
+                    print("{}: {}".format(name, quantity))
             return hot_list
     else:
         return None
